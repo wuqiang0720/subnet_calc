@@ -1,0 +1,19 @@
+name: Run Subnet Calculator
+
+on:
+  workflow_dispatch:   # 手动触发
+
+jobs:
+  run-subnet-calc:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Run Subnet Calculator
+      run: python3 scripts/subnet_calc.py
